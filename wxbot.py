@@ -28,7 +28,7 @@ next_time = datetime.datetime.strptime(str(next_year)+"-"+str(next_month)+"-"+st
 # 获取距离明天3点时间，单位为秒
 timer_start_time = (next_time - now_time).total_seconds()
 
-def send_msg(group_name, message):
+def send_msg():
     target = bot.groups().search(group_name)[0]
     target.send(message)
     timer = threading.Timer(86400, send_msg)
